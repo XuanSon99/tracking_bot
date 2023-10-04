@@ -32,7 +32,7 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
             data[index]['block_timestamp'] = tx['block_timestamp']
             value = round(float(tx['value'])*pow(10,-6))
 
-            if value >= 0:
+            if value >= 50000:
 
                 time = datetime.fromtimestamp(tx['block_timestamp']/1000)
 
