@@ -57,14 +57,14 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
 
                     text = f"<b>🟢 {item['name']}</b> vừa nhận <b>{value}</b> từ ví <b>{acc}</b>\n<a href='https://tronscan.org/#/transaction/{tx['transaction_id']}'>Chi tiết giao dịch</a>"
 
-                await context.bot.send_message(chat_id=-4020584900, text=text, parse_mode=constants.ParseMode.HTML, disable_web_page_preview=True)
+                await context.bot.send_message(chat_id=-4082317824, text=text, parse_mode=constants.ParseMode.HTML, disable_web_page_preview=True)
 
     with open('data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
 
 app = ApplicationBuilder().token(
-    "6217705988:AAEOYp5g31rkl-iWrXAGE_mo7t0f0Oz3qIo").build()
+    "6568702208:AAGfPceJaWQae39zX57FqqotN3Zx8FWKIUA").build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.ALL, messageHandler))
