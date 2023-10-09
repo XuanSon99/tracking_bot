@@ -36,6 +36,8 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
 
                 time = datetime.fromtimestamp(tx['block_timestamp']/1000)
 
+                text = ''
+
                 if tx['from'] == item['wallet']:
 
                     account = [p for p in data if p['wallet'] == tx['to']]
