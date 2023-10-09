@@ -36,10 +36,15 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
 
                 time = datetime.fromtimestamp(tx['block_timestamp']/1000)
 
-                text = f"<b>🟢 {item['name']}</b> vừa nhận <b>{value}</b> từ ví <b>{tx['from'][-5:]}</b>\n<a href='https://tronscan.org/#/transaction/{tx['transaction_id']}'>Chi tiết giao dịch</a>"
-
                 if tx['from'] == item['wallet']:
-                    text = f"🔴 <b>{item['name']}</b> vừa gửi <b>{value}</b> tới ví <b>{tx['to'][-5:]}</b>\n<a href='https://tronscan.org/#/transaction/{tx['transaction_id']}'>Chi tiết giao dịch</a>"
+
+                    account = [p for p in data if p['wallet'] == tx['to']]
+                    text = f"🔴 <b>{item['name']}</b> vừa gửi <b>{value}</b> tới ví <b>{account[0]['name']}</b>\n<a href='https://tronscan.org/#/transaction/{tx['transaction_id']}'>Chi tiết giao dịch</a>"
+
+                if tx['to'] == item['wallet']:
+
+                    account = [p for p in data if p['wallet'] == tx['from']]
+                    text = f"<b>🟢 {item['name']}</b> vừa nhận <b>{value}</b> từ ví <b>{account[0]['name']}</b>\n<a href='https://tronscan.org/#/transaction/{tx['transaction_id']}'>Chi tiết giao dịch</a>"
 
                 await context.bot.send_message(chat_id=-4082317824, text=text, parse_mode=constants.ParseMode.HTML, disable_web_page_preview=True)
 
@@ -58,3 +63,4 @@ job_queue = app.job_queue
 job_minute = job_queue.run_repeating(callback_minute, interval=30, first=1)
 
 app.run_polling()
+
