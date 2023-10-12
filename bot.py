@@ -19,6 +19,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def messageHandler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     username = update.effective_user.username
     chat_id = update.effective_chat.id
+    print(chat_id)
 
 async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
 
@@ -55,7 +56,7 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
 
                     text = f"<b>🟢 {item['name']}</b> vừa nhận <b>{value}</b> từ ví <b>{acc}</b>\n<a href='https://tronscan.org/#/transaction/{tx['transaction_id']}'>Chi tiết giao dịch</a>"
 
-                await context.bot.send_message(chat_id=-4082317824, text=text, parse_mode=constants.ParseMode.HTML, disable_web_page_preview=True)
+                await context.bot.send_message(chat_id=-1001986367510, text=text, parse_mode=constants.ParseMode.HTML, disable_web_page_preview=True)
 
     with open('data.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
@@ -84,8 +85,8 @@ app = ApplicationBuilder().token(
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.ALL, messageHandler))
 
-job_queue = app.job_queue
+# job_queue = app.job_queue
 
-job_minute = job_queue.run_repeating(callback_minute, interval=20, first=1)
+# job_minute = job_queue.run_repeating(callback_minute, interval=20, first=1)
 
 app.run_polling()
