@@ -85,8 +85,8 @@ app = ApplicationBuilder().token(
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.ALL, messageHandler))
 
-# job_queue = app.job_queue
+job_queue = app.job_queue
 
-# job_minute = job_queue.run_repeating(callback_minute, interval=20, first=1)
+job_minute = job_queue.run_repeating(callback_minute, interval=20, first=1)
 
 app.run_polling()
