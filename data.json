@@ -1,12 +1,17 @@
 [
   {
+    "name": "HeroTeam",
+    "wallet": "TLd1GNEvc3f3av3Q6vPNS6KARbdA5ge5tQ",
+    "block_timestamp": 1706319069000
+  },
+  {
     "name": "Anh Li\u00eam",
     "wallet": "TDa3X9wFxvbBhc6jdZrBWNQkju4sa5Xbd7",
     "block_timestamp": 1706319069000
   },
   {
-    "name": "Ph\u01b0\u01a1ng B\u00e9o",
-    "wallet": "THHAztHtrcMcVcxwiNEB4cTfviSqDBk4UN",
+    "name": "Phương Cúc",
+    "wallet": "TUXsppberDuVqQmNN5mnxg4pJ3HU9YtCEw",
     "block_timestamp": 1706263713000
   },
   {
@@ -33,21 +38,6 @@
     "name": "Ch\u1ecb Th\u00f9y",
     "wallet": "TMzheKeimtCHZvrHn1PTrwNLcMAWgzYvfT",
     "block_timestamp": 1706257311000
-  },
-  {
-    "name": "L\u00e3m Dz",
-    "wallet": "TYmYmW6vWv2juTFqkd7jqZst1cN3aqsVH9",
-    "block_timestamp": 1703510670000
-  },
-  {
-    "name": "Ki\u1ec1u Th\u1eafng",
-    "wallet": "TFBKe1pThLetwQqFyghSEuhZFtLeSH94SM",
-    "block_timestamp": 1706288628000
-  },
-  {
-    "name": "Ki\u1ec1u Th\u1eafng",
-    "wallet": "TBZLT4dr7ZsBxfqRx89EoPAdG9dSNWyn4k",
-    "block_timestamp": 1706254413000
   },
   {
     "name": "Anh H\u1ee3p",
@@ -357,6 +347,11 @@
   {
     "name": "\u0110o\u00e0n D\u1ef1",
     "wallet": "TNqsWQ3UbqMm4FPXFGQ66Bw4t3zaiEwQLG",
+    "block_timestamp": 1706258163000
+  },
+  {
+    "name": "A Thức",
+    "wallet": "TECRNMHfHCMRsifw4SM86HCEvAcWGeCtXW",
     "block_timestamp": 1706258163000
   }
 ]
