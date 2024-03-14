@@ -54,6 +54,10 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
         tx = res.json()["data"][0]
         if item["block_timestamp"] != tx["block_timestamp"]:
             data[index]["block_timestamp"] = tx["block_timestamp"]
+
+            with open("data.json", "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2)
+                
             value = round(float(tx["value"]) * pow(10, -6))
 
             if value >= 50000:
@@ -85,8 +89,7 @@ async def callback_minute(context: ContextTypes.DEFAULT_TYPE):
                     disable_web_page_preview=True,
                 )
 
-    with open("data.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+    
 
 
 def get_balance(address):
